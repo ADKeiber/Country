@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.country.model.User;
 import com.example.country.service.UserService;
+import com.example.country.service.UserServiceImpl;
 import com.example.country.web.dto.UserRegistrationDto;
 
 @Controller
@@ -20,7 +21,7 @@ import com.example.country.web.dto.UserRegistrationDto;
 public class UserRegistrationController {
 
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @ModelAttribute("user")
     public UserRegistrationDto userRegistrationDto() {
