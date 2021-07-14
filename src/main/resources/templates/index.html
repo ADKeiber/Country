@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1 align="center">Countries</h1>
+		<br/>
+		<table>
+			<tr>
+				<th></th>
+			</tr>
+			<tr th:each="country: ${countries}">
+				<td>
+				    <a th:href="@{/countryInfo/{countryId}(countryId=${country.countryId})}" th:text ="${country.countryName}"></a>
+				</td>
+				<td>
+				    <a th:href="@{/editPopulation/{countryId}(countryId=${country.countryId})}">Edit Population</a>
+				</td>
+			</tr>
+		</table>
+		
+		<a th:href="@{/new}">Click to add new country</a>
+	</body>
+</html>
