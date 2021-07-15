@@ -1,4 +1,4 @@
-package com.example.country.web;
+package com.example.country.controller;
 
 import javax.validation.Valid;
 
@@ -38,6 +38,7 @@ public class UserRegistrationController {
                                       BindingResult result){
 
         User existing = userService.findByEmail(userDto.getEmail());
+//        System.out.println(existing.toString());
         if (existing != null){
             result.rejectValue("email", null, "There is already an account registered with that email");
         }
